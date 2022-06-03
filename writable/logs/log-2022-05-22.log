@@ -1,0 +1,44 @@
+CRITICAL - 2022-05-22 00:35:51 --> Call to undefined method CodeIgniter\Session\Session::flashdata()
+#0 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): App\Controllers\Admin_Products->view('1')
+#1 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_Products))
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-05-22 00:36:12 --> Call to undefined method CodeIgniter\Session\Session::flashdata()
+#0 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): App\Controllers\Admin_Products->edit('2')
+#1 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_Products))
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+ERROR - 2022-05-22 04:46:20 --> [ERROR] 6 : Could not resolve host: api.pwnedpasswords.com C:\xampp\htdocs\tokoku\vendor\myth\auth\src\Exceptions\AuthException.php:55
+CRITICAL - 2022-05-22 04:46:20 --> 6 : Could not resolve host: api.pwnedpasswords.com
+#0 C:\xampp\htdocs\tokoku\vendor\myth\auth\src\Authentication\Passwords\PwnedValidator.php(67): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+#1 C:\xampp\htdocs\tokoku\vendor\myth\auth\src\Authentication\Passwords\PasswordValidator.php(55): Myth\Auth\Authentication\Passwords\PwnedValidator->check('rahasiabangetlo...', Object(Myth\Auth\Entities\User))
+#2 C:\xampp\htdocs\tokoku\vendor\myth\auth\src\Authentication\Passwords\ValidationRules.php(45): Myth\Auth\Authentication\Passwords\PasswordValidator->check('rahasiabangetlo...', Object(Myth\Auth\Entities\User))
+#3 C:\xampp\htdocs\tokoku\system\Validation\Validation.php(291): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('rahasiabangetlo...', NULL)
+#4 C:\xampp\htdocs\tokoku\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('password', 'password', 'rahasiabangetlo...', Array, Array)
+#5 C:\xampp\htdocs\tokoku\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#6 C:\xampp\htdocs\tokoku\vendor\myth\auth\src\Controllers\AuthController.php(168): CodeIgniter\Controller->validate(Array)
+#7 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->attemptRegister()
+#8 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#9 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+ERROR - 2022-05-22 04:53:01 --> [ERROR] 6 : Could not resolve host: api.pwnedpasswords.com C:\xampp\htdocs\tokoku\vendor\myth\auth\src\Exceptions\AuthException.php:55
+CRITICAL - 2022-05-22 04:53:01 --> 6 : Could not resolve host: api.pwnedpasswords.com
+#0 C:\xampp\htdocs\tokoku\vendor\myth\auth\src\Authentication\Passwords\PwnedValidator.php(67): Myth\Auth\Exceptions\AuthException::forHIBPCurlFail(Object(CodeIgniter\HTTP\Exceptions\HTTPException))
+#1 C:\xampp\htdocs\tokoku\vendor\myth\auth\src\Authentication\Passwords\PasswordValidator.php(55): Myth\Auth\Authentication\Passwords\PwnedValidator->check('rahasiabangetlo...', Object(Myth\Auth\Entities\User))
+#2 C:\xampp\htdocs\tokoku\vendor\myth\auth\src\Authentication\Passwords\ValidationRules.php(45): Myth\Auth\Authentication\Passwords\PasswordValidator->check('rahasiabangetlo...', Object(Myth\Auth\Entities\User))
+#3 C:\xampp\htdocs\tokoku\system\Validation\Validation.php(291): Myth\Auth\Authentication\Passwords\ValidationRules->strong_password('rahasiabangetlo...', NULL)
+#4 C:\xampp\htdocs\tokoku\system\Validation\Validation.php(157): CodeIgniter\Validation\Validation->processRules('password', 'password', 'rahasiabangetlo...', Array, Array)
+#5 C:\xampp\htdocs\tokoku\system\Controller.php(160): CodeIgniter\Validation\Validation->run()
+#6 C:\xampp\htdocs\tokoku\vendor\myth\auth\src\Controllers\AuthController.php(168): CodeIgniter\Controller->validate(Array)
+#7 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->attemptRegister()
+#8 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#9 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}

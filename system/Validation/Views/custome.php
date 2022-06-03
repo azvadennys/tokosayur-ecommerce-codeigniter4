@@ -1,0 +1,1 @@
+<div class="form-error text-danger font-weight-bold"><?= esc($error) ?></div>
