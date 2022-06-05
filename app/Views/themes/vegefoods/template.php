@@ -128,7 +128,6 @@
 							<ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
 								<li><a href="<?= base_url('shop/cart') ?>" class="py-2 d-block">Keranjang Belanja</a></li>
 								<li><a href="<?= base_url('customer_payments/confirm') ?>" class="py-2 d-block">Konfirmasi Pembayaran</a></li>
-								<li><a href="<?= base_url('shop/testimonial') ?>" class="py-2 d-block">Testimoni Pelanggan</a></li>
 							</ul>
 						</div>
 					</div>

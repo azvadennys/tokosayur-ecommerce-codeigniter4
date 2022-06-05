@@ -1,21 +1,24 @@
 <?php
-defined('BASEPATH') or exit('No direct script access allowed');
 
-class Reviews extends CI_Controller
+namespace App\Controllers;
+
+use Myth\Auth\Password;
+use App\Models\ProductModel;
+use App\Models\Customer\Order_model;
+use App\Models\Customer\Payment_model;
+use App\Models\Customer\Review_model;
+use App\Models\ReviewModel;
+use phpDocumentor\Reflection\Types\This;
+
+class Customer_Reviews extends BaseController
 {
     public function __construct()
     {
-        parent::__construct();
-
-        verify_session('customer');
-
-        $this->load->model(array(
-            'payment_model' => 'payment',
-            'order_model' => 'order',
-            'review_model' => 'review'
-        ));
-
-        $this->load->library('form_validation');
+        $this->validation =  \Config\Services::validation();
+        $this->payment = new Payment_model();
+        $this->order = new Order_model();
+        $this->review = new Review_model();
+        $this->session = session();
     }
 
     public function index()
@@ -57,6 +60,8 @@ class Reviews extends CI_Controller
         $this->load->view('header', $params);
         $this->load->view('reviews/reviews', $reviews);
         $this->load->view('footer');
+
+        return view('customers/reviews/reviews', $reviews);
     }
 
     public function write()

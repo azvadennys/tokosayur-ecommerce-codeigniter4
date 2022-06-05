@@ -75,7 +75,7 @@ class Pages extends BaseController
             );
 
             $this->contact->register_contact($data);
-            $this->session->set_flashdata('contact_flash', 'Pesan berhasil dikirimkan. Kami akan membalas dalam waktu 2x24 jam');
+            $this->session->setflashdata('contact_flash', 'Pesan berhasil dikirimkan. Kami akan membalas dalam waktu 2x24 jam');
 
             redirect('pages/contact');
         }

@@ -38,7 +38,7 @@
               <table class="table align-items-center table-flush">
                 <thead class="thead-light">
                   <tr>
-                    <th scope="col">ID</th>
+                    <th scope="col">NO</th>
                     <th scope="col">Pembayaran Order</th>
                     <th scope="col">Customer</th>
                     <th scope="col">Tanggal</th>
@@ -47,10 +47,11 @@
                   </tr>
                 </thead>
                 <tbody>
+                  <?php $i = 1 + (10 * ($currentPage - 1)) ?>
                   <?php foreach ($payments as $payment) : ?>
                     <tr>
                       <th scope="col">
-                        <?php echo $payment['id']; ?>
+                        <?php echo $i++; ?>
                       </th>
                       <td>#<?php echo anchor('admin_payments/view/' . $payment['id'], $payment['order_number']); ?></td>
                       <td>

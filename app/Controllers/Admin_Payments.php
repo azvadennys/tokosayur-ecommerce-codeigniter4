@@ -22,15 +22,17 @@ class Admin_Payments extends BaseController
     {
 
         $pager = \Config\Services::pager();
+        $currentPage = $this->request->getVar('page_table') ? $this->request->getVar('page_table') : 1;
         $payments = [
             'title' => 'Kelola Pembayaran',
             'payments' => $this->payment
-            ->select('payments.id, payments.payment_date, payments.order_id, payments.payment_price, payments.payment_status as status, o.order_number, c.name AS customer')
-            ->join('orders o','o.id = payments.order_id')
-            ->join(' users c', 'c.id = o.user_id')
-            ->orderBy('payments.payment_date DESC')
-            ->paginate(10, 'table'),
-            'pager' => $this->payment->pager
+                ->select('payments.id, payments.payment_date, payments.order_id, payments.payment_price, payments.payment_status as status, o.order_number, c.name AS customer')
+                ->join('orders o', 'o.id = payments.order_id')
+                ->join(' users c', 'c.id = o.user_id')
+                ->orderBy('payments.payment_date DESC')
+                ->paginate(10, 'table'),
+            'pager' => $this->payment->pager,
+            'currentPage' => $currentPage
         ];
 
         return view('admin/payments/payments', $payments);
