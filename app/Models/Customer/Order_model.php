@@ -6,17 +6,12 @@ use CodeIgniter\Model;
 
 class Order_model extends Model
 {
-    public $user_id;
-
-    public function __construct()
+    protected $table = 'orders';
+    public function count_all_orders()
     {
         helper('global_helper');
         $this->db = \Config\Database::connect();
         $this->user_id = get_current_user_id();
-    }
-
-    public function count_all_orders()
-    {
         $id = $this->user_id;
 
         return $this->db->table('orders')->where('user_id', $id)->countAllResults();
@@ -24,6 +19,9 @@ class Order_model extends Model
 
     public function count_process_order()
     {
+        helper('global_helper');
+        $this->db = \Config\Database::connect();
+        $this->user_id = get_current_user_id();
         $id = $this->user_id;
 
         return $this->db->table('orders')->where(array('user_id' => $id, 'order_status' => 2))->countAllResults();
@@ -31,6 +29,9 @@ class Order_model extends Model
 
     public function get_all_orders($limit, $start)
     {
+        helper('global_helper');
+        $this->db = \Config\Database::connect();
+        $this->user_id = get_current_user_id();
         $id = $this->user_id;
 
         $orders = $this->db->query("
@@ -38,8 +39,8 @@ class Order_model extends Model
             FROM orders o
             LEFT JOIN coupons c
                 ON c.id = o.coupon_id
-            JOIN customers cu
-                ON cu.user_id = o.user_id
+            JOIN users cu
+                ON cu.id = o.user_id
             WHERE o.user_id = '$id'
             ORDER BY o.order_date DESC
             LIMIT $start, $limit
@@ -50,11 +51,17 @@ class Order_model extends Model
 
     public function order_with_bank_payments()
     {
+        helper('global_helper');
+        $this->db = \Config\Database::connect();
+        $this->user_id = get_current_user_id();
         return $this->db->table('orders')->where(array('user_id' => $this->user_id, 'payment_method' => 1, 'order_status' => 1))->orderBy('order_date', 'DESC')->get()->getResult();
     }
 
     public function is_order_exist($id)
     {
+        helper('global_helper');
+        $this->db = \Config\Database::connect();
+        $this->user_id = get_current_user_id();
         $user_id = $this->user_id;
 
         return ($this->db->table('orders')->where(array('id' => $id, 'user_id' => $user_id))->countAllResults() > 0) ? TRUE : FALSE;
@@ -62,6 +69,7 @@ class Order_model extends Model
 
     public function order_data($id)
     {
+        $this->db = \Config\Database::connect();
         $data = $this->db->query("
             SELECT o.*, c.name, c.code, p.payment_price, p.payment_date, p.picture_name, p.payment_status, p.confirmed_date, p.payment_data
             FROM orders o
@@ -77,6 +85,7 @@ class Order_model extends Model
 
     public function order_items($id)
     {
+        $this->db = \Config\Database::connect();
         $items = $this->db->query("
             SELECT oi.product_id, oi.order_qty, oi.order_price, p.name, p.picture_name
             FROM order_items oi
@@ -87,29 +96,34 @@ class Order_model extends Model
         return $items->getResult();
     }
 
-    // public function cancel_order($id)
-    // {
-    //     $data = $this->order_data($id);
-    //     $payment_method = $data->payment_method;
+    public function cancel_order($id)
+    {
+        $this->db = \Config\Database::connect();
+        $data = $this->order_data($id);
+        $payment_method = $data->payment_method;
 
-    //     $status =  ($payment_method == 1) ? 5 : 4;
+        $status =  ($payment_method == 1) ? 5 : 4;
 
-    //     return $this->db->where('id', $id)->update('orders', array('order_status' => $status));
-    // }
+        return $this->db->table('orders')->where('id', $id)->update(array('order_status' => $status));
+    }
 
-    // public function delete_order($id)
-    // {
-    //     if (($this->db->where('order_id', $id)->get('order_items')->num_rows() > 0))
-    //         $this->db->where('order_id', $id)->delete('order_items');
+    public function delete_order($id)
+    {
+        $this->db = \Config\Database::connect();
+        if (($this->db->table('order_items')->where('order_id', $id)->countAllResults() > 0))
+            $this->db->table('order_items')->where('order_id', $id)->delete();
 
-    //     if (($this->db->where('order_id', $id)->get('payments')->num_rows() > 0))
-    //         $this->db->where('order_id', $id)->delete('payments');
+        if (($this->db->table('payments')->where('order_id', $id)->countAllResults() > 0))
+            $this->db->table('payments')->where('order_id', $id)->delete();
 
-    //     $this->db->where('id', $id)->delete('orders');
-    // }
+        $this->db->table('orders')->where('id', $id)->delete();
+    }
 
-    // public function all_orders()
-    // {
-    //     return $this->db->where('user_id', $this->user_id)->order_by('order_date', 'DESC')->get('orders')->result();
-    // }
+    public function all_orders()
+    {
+        helper('global_helper');
+        $this->db = \Config\Database::connect();
+        $this->user_id = get_current_user_id();
+        return $this->db->table('orders')->where('user_id', $this->user_id)->orderBy('order_date', 'DESC')->get()->getResult();
+    }
 }

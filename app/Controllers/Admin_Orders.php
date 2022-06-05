@@ -25,7 +25,7 @@ class Admin_Orders extends BaseController
         // } else {
         $orders['title'] = 'Kelola Order';
         // }
-        $orders['orders'] = $this->order->select('orders.*, u.name, u.id as id_user')->join('users u', 'u.id = orders.user_id')->paginate(10, 'table');
+        $orders['orders'] = $this->order->select('orders.*, u.name, u.id as id_user')->join('users u', 'u.id = orders.user_id')->orderBy('order_date', 'DESC')->paginate(10, 'table');
         // dd($orders['orders']);
         $orders['pager'] = $this->order->pager;
         return view('admin/orders/orders', $orders);

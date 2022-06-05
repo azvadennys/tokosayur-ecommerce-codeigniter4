@@ -18,7 +18,7 @@ class ProductModel extends Model
     {
         $db = \Config\Database::connect();
         $builder = $db->table('products');
-        $data = $builder->limit(8)->get();
+        $data = $builder->limit(8)->orderBy('add_date', 'DESC')->get();
         return $data->getResultArray();
     }
 

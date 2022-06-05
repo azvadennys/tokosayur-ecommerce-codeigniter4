@@ -19,7 +19,7 @@
         </div>
     </section>
 
-    <section class="content">
+    <section class="ftco-section">
         <div class="row">
             <div class="col-md-8">
                 <div class="card card-primary">
@@ -27,6 +27,8 @@
                         <h5 class="card-heading">Data Pembayaran</h5>
                     </div>
                     <?php echo form_open_multipart('customer_payments/do_confirm'); ?>
+
+                    <?php $validation = \Config\Services::validation() ?>
                     <div class="card-body">
                         <?php if ($flash) : ?>
                             <div class="alert alert-info"><?php echo $flash; ?></div>
@@ -121,7 +123,7 @@
                                     <tr>
                                         <td>#</td>
                                         <td>
-                                            <?php echo anchor('customer/payments/view/' . $payment->id, 'Order #' . $payment->order_number); ?>
+                                            <?php echo anchor('customer_payments/view/' . $payment->id, 'Order #' . $payment->order_number); ?>
                                         </td>
                                         <td>
                                             <?php if ($payment->payment_status == 1) : ?>

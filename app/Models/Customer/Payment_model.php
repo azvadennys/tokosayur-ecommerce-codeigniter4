@@ -19,7 +19,7 @@ class Payment_model extends Model
         return $this->db->table('payments')->join('orders', 'orders.id = payments.order_id')->where('orders.user_id', $id)->countAllResults();
     }
 
-    public function get_all_payments($limit, $start)
+    public function get_all_payments()
     {
         $this->db = \Config\Database::connect();
         $this->user_id = get_current_user_id();
@@ -32,7 +32,6 @@ class Payment_model extends Model
                 ON o.id = p.order_id
             WHERE o.user_id = '$id'
             ORDER BY p.payment_date DESC
-            LIMIT $start, $limit
         ");
 
         return $payments->getResult();
@@ -59,7 +58,8 @@ class Payment_model extends Model
             JOIN orders o
 	            ON o.id = p.order_id
             WHERE o.user_id = '$id'
-            LIMIT 5");
+            ORDER BY `p`.`payment_date` DESC
+            LIMIT 10");
 
         return $payments->getResult();
     }

@@ -1,6 +1,6 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?>
+<?= $this->extend('themes\vegefoods\template'); ?>
+
+<?= $this->section('konten'); ?>
 <div class="content-wrapper">
     <section class="content-header">
         <div class="container-fluid">
@@ -11,7 +11,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><?php echo anchor('customer', 'Home'); ?></li>
-                        <li class="breadcrumb-item active"><?php echo anchor('customer/payments', 'Pembayaran'); ?></li>
+                        <li class="breadcrumb-item active"><?php echo anchor('customer_payments', 'Pembayaran'); ?></li>
                         <li class="breadcrumb-item active">Order #<?php echo $data->order_number; ?></li>
                     </ol>
                 </div>
@@ -47,13 +47,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                             <tr>
                                 <td>Transfer ke</td>
                                 <td><b>
-                                    <?php
+                                        <?php
                                         $transfer_to = $payment->transfer_to;
                                         $transfer_to = $banks[$transfer_to];
-                                        
-                                    ?>
-                                    <?php echo $transfer_to->bank; ?> a.n <?php echo $transfer_to->name; ?> (<?php echo $transfer_to->number; ?>)
-                                </b></td>
+
+                                        ?>
+                                        <?php echo $transfer_to->bank; ?> a.n <?php echo $transfer_to->name; ?> (<?php echo $transfer_to->number; ?>)
+                                    </b></td>
                             </tr>
                             <tr>
                                 <td>Status</td>
@@ -70,7 +70,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                     </div>
                     <div class="card-body">
                         <div class="text-center">
-                            <img alt="Pembayaran order #<?php echo $data->order_number; ?>" class="img img-fluid" src="<?php echo base_url('assets/uploads/payments/'. $data->picture_name); ?>">
+                            <img alt="Pembayaran order #<?php echo $data->order_number; ?>" class="img img-fluid" src="<?php echo base_url('assets/uploads/payments/' . $data->picture_name); ?>">
                         </div>
                     </div>
                 </div>
@@ -79,3 +79,4 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     </section>
 
 </div>
+<?= $this->endSection(); ?>

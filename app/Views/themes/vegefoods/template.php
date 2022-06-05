@@ -55,7 +55,7 @@
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown04">
 							<a class="dropdown-item" href="<?php echo base_url('shop/cart'); ?>">Keranjang Belanja</a>
-							<a class="dropdown-item" href="<?php echo base_url('customer/payments/confirm'); ?>">Konfirmasi Pembayaran</a>
+							<a class="dropdown-item" href="<?php echo base_url('customer_payments/confirm'); ?>">Konfirmasi Pembayaran</a>
 						</div>
 					</li>
 					<li class="nav-item"><a href="<?php echo base_url('about'); ?>" class="nav-link">Tentang Kami</a></li>
@@ -65,7 +65,7 @@
 						<div class="dropdown-menu" aria-labelledby="dropdown05">
 							<?php if (in_groups('customer')) : ?>
 								<a class="dropdown-item" href="<?php echo base_url('customer'); ?>">Akun saya</a>
-								<a class="dropdown-item" href="<?php echo base_url('customer/orders'); ?>">Pesanan Saya</a>
+								<a class="dropdown-item" href="<?php echo base_url('customer_orders'); ?>">Pesanan Saya</a>
 								<div class="divider"></div>
 								<a class="dropdown-item" href="<?php echo base_url('logout'); ?>">Logout</a>
 							<?php elseif (in_groups('admin')) :  ?>

@@ -202,7 +202,7 @@
                         <?php if ($data->order_status == 1) : ?>
                             <p>Order menunggu pembayaran</p>
                             <p>Sudah mengirim pembayaran? Mari konfirmasi pembayaran.</p>
-                            <a href="<?php echo site_url('customer/payments/confirm?order=' . $data->id); ?>" class="btn btn-success">Konfirmasi Pembayaran</a>
+                            <a href="<?php echo base_url('customer_payments/confirm?order=' . $data->id); ?>" class="btn btn-success">Konfirmasi Pembayaran</a>
                             <br>
                             <a href="#" class="btn btn-danger" data-toggle="modal" data-target="#cancelModal">Batalkan</a>
                         <?php elseif ($data->order_status == 5) : ?>
