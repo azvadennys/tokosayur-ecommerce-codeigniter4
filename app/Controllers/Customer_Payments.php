@@ -21,7 +21,7 @@ class Customer_Payments extends BaseController
 
     public function index()
     {
-       
+        $currentPage = $this->request->getVar('page_table') ? $this->request->getVar('page_table') : 1;
         $data = [
             'title' => 'Pembayaran Saya',
             'payments' => $this->payment->select('payments.*, o.order_number')
@@ -29,7 +29,8 @@ class Customer_Payments extends BaseController
                 ->where('o.user_id', user_id())
                 ->orderBy('payment_date', 'DESC')
                 ->paginate(10, 'table'),
-            'pager' => $this->payment->pager
+            'pager' => $this->payment->pager,
+            'currentPage' => $currentPage
         ];
         return view('customers/payments/payments', $data);
     }

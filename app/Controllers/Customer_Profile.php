@@ -1,12 +1,13 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Profile extends CI_Controller {
+class Profile extends CI_Controller
+{
     public function __construct()
     {
         parent::__construct();
 
-        verify_session('customer');
+        verify_sessio('customer');
 
         $this->load->model(array(
             'profile_model' => 'profile'
@@ -31,12 +32,9 @@ class Profile extends CI_Controller {
     {
         $this->form_validation->set_rules('name', 'Nama lengkap', 'required|max_length[32]|min_length[4]');
 
-        if ($this->form_validation->run() === FALSE)
-        {
+        if ($this->form_validation->run() === FALSE) {
             $this->index();
-        }
-        else
-        {
+        } else {
             $data = new stdClass();
 
             $data->name = $this->input->post('name');
@@ -50,21 +48,17 @@ class Profile extends CI_Controller {
                 $config['upload_path'] = './assets/uploads/users/';
                 $config['allowed_types'] = 'jpg|png';
                 $config['max_size'] = 2048;
-                
+
                 $this->load->library('upload', $config);
 
-                if ($this->upload->do_upload('file'))
-                {
-                    if ($old_profile)
-                    {
-                        unlink('./assets/uploads/users/'. $old_profile);
+                if ($this->upload->do_upload('file')) {
+                    if ($old_profile) {
+                        unlink('./assets/uploads/users/' . $old_profile);
                     }
 
                     $file_data = $this->upload->data();
                     $data->profile_picture = $file_data['file_name'];
-                }
-                else
-                {
+                } else {
                     $errors = $this->upload->display_errors();
                     $errors .= '<p>';
                     $errors .= anchor('profile', '&laquo; Kembali');
@@ -75,7 +69,7 @@ class Profile extends CI_Controller {
             }
 
             $flash_message = ($this->profile->update($data)) ? 'Profil berhasil diperbarui!' : 'Terjadi kesalahan';
-            
+
             $this->session->set_flashdata('profile', $flash_message);
             redirect('customer/profile');
         }
@@ -86,21 +80,17 @@ class Profile extends CI_Controller {
         $this->form_validation->set_rules('username', 'Username', 'required|max_length[16]|min_length[4]');
         $this->form_validation->set_rules('password', 'Password', 'min_length[4]');
 
-        if ($this->form_validation->run() === FALSE)
-        {
+        if ($this->form_validation->run() === FALSE) {
             $this->index();
-        }
-        else
-        {
+        } else {
             $data = new stdClass();
             $profile = $this->profile->get_profile();
 
             $get_password = $this->input->post('password');
 
-            if ( empty($get_password)) {
+            if (empty($get_password)) {
                 $password = $profile->password;
-            }
-            else {
+            } else {
                 $password = password_hash($get_password, PASSWORD_BCRYPT);
             }
 
@@ -108,7 +98,7 @@ class Profile extends CI_Controller {
             $data->password = $password;
 
             $flash_message = ($this->profile->update_account($data)) ? 'Akun berhasil diperbarui' : 'Terjadi kesalahan';
-            
+
             $this->session->set_flashdata('profile', $flash_message);
             $this->session->set_flashdata('show_tab', 'akun');
 
@@ -120,18 +110,15 @@ class Profile extends CI_Controller {
     {
         $this->form_validation->set_rules('email', 'Email', 'required|valid_email|max_length[32]|min_length[10]');
 
-        if ($this->form_validation->run() === FALSE)
-        {
+        if ($this->form_validation->run() === FALSE) {
             $this->index();
-        }
-        else
-        {
+        } else {
             $data = new stdClass();
 
             $data->email = $this->input->post('email');
-            
+
             $flash_message = ($this->profile->update_account($data)) ? 'Email berhasil diperbarui' : 'Terjadi kesalahan';
-            
+
             $this->session->set_flashdata('profile', $flash_message);
             $this->session->set_flashdata('show_tab', 'email');
 

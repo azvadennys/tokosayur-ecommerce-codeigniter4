@@ -17,7 +17,7 @@ class Customer_Orders extends BaseController
 
     public function index()
     {
-       
+        $currentPage = $this->request->getVar('page_table') ? $this->request->getVar('page_table') : 1;
         $data = [
             'title' => 'Order Saya',
             'orders' => $this->order->select('orders.id, orders.order_number, orders.order_date, orders.order_status, orders.payment_method, orders.total_price, orders.total_items, c.name AS coupon, cu.name AS customer')
@@ -26,7 +26,8 @@ class Customer_Orders extends BaseController
                 ->where('orders.user_id', user_id())
                 ->orderBy('order_date', 'DESC')
                 ->paginate(10, 'table'),
-            'pager' => $this->order->pager
+            'pager' => $this->order->pager,
+            'currentPage' => $currentPage
         ];
         return view('customers/orders/orders', $data);
     }

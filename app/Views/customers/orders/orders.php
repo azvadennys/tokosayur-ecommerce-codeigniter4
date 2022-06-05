@@ -1,31 +1,26 @@
 <?= $this->extend('themes\vegefoods\template'); ?>
 
 <?= $this->section('konten'); ?>
-<div class="content-wrapper">
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Order Saya</h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><?php echo anchor(base_url(), 'Home'); ?></li>
-                        <li class="breadcrumb-item active">Order</li>
-                    </ol>
-                </div>
+<div class="hero-wrap hero-bread" style="background-image: url('<?php echo get_theme_uri('images/bg_1.jpg'); ?>');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><?php echo anchor(base_url(), 'Home'); ?></span> <span><?php echo anchor('customer_orders', 'Orders'); ?></span>
+                </p>
+                <h1 class="mb-0 bread">Orderan Saya</h1>
             </div>
         </div>
-    </section>
-
-    <section class="content">
+    </div>
+</div>
+<section class="ftco-section">
+    <div class="container">
         <div class="card card-primary">
             <div class="card-body<?php echo (count($orders) > 0) ? ' p-0' : ''; ?>">
                 <?php if (count($orders) > 0) : ?>
                     <div class="table-responsive">
                         <table class="table table-striped m-0">
-                            <tr class="bg-primary">
-                                <th scope="col">ID</th>
+                            <tr class="bg-primary" style="color:white;">
+                                <th scope="col">NO</th>
                                 <th scope="col">Nomor Pesanan</th>
                                 <th scope="col">Tanggal</th>
                                 <th scope="col">Jumlah Pesanan</th>
@@ -33,9 +28,10 @@
                                 <th scope="col">Pembayaran</th>
                                 <th scope="col">Status</th>
                             </tr>
+                            <?php $i = 1 + (10 * ($currentPage - 1)) ?>
                             <?php foreach ($orders as $order) : ?>
                                 <tr>
-                                    <td><?php echo $order['id']; ?></td>
+                                    <td><?php echo $i++ ?></td>
                                     <td><?php echo anchor('customer_orders/view/' . $order['id'], '#' . $order['order_number']); ?></td>
                                     <td><?php echo get_formatted_date($order['order_date']); ?></td>
                                     <td><?php echo $order['total_items']; ?> barang</td>
@@ -60,9 +56,8 @@
             <div class="card-footer">
                 <?php echo $pager->links('table', 'pagination'); ?>
             </div>
-
         </div>
-    </section>
+</section>
 
 </div>
 <?= $this->endSection(); ?>

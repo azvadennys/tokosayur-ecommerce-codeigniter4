@@ -1,33 +1,27 @@
 <?= $this->extend('themes\vegefoods\template'); ?>
 
 <?= $this->section('konten'); ?>
-<div class="content-wrapper">
-    <section class="content-header">
-        <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1>Pembayaran Order #<?php echo $data->order_number; ?></h1>
-                </div>
-                <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><?php echo anchor('customer', 'Home'); ?></li>
-                        <li class="breadcrumb-item active"><?php echo anchor('customer_payments', 'Pembayaran'); ?></li>
-                        <li class="breadcrumb-item active">Order #<?php echo $data->order_number; ?></li>
-                    </ol>
-                </div>
+<div class="hero-wrap hero-bread" style="background-image: url('<?php echo get_theme_uri('images/bg_1.jpg'); ?>');">
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <p class="breadcrumbs"><span class="mr-2"><?php echo anchor(base_url(), 'Home'); ?></span> <span><?php echo anchor('customer_payments', 'Payments View'); ?></span>
+                </p>
+                <h1 class="mb-0 bread">Pembayaran Saya</h1>
             </div>
         </div>
-    </section>
-
-    <section class="content">
+    </div>
+</div>
+<section class="ftco-section">
+    <div class="container">
         <div class="row">
             <div class="col-md-8">
                 <div class="card card-primary">
-                    <div class="card-header">
-                        <h5 class="card-heading">Data Order</h5>
+                    <div class="card-header bg-primary">
+                        <h5 class="card-heading" style="color:white;">Data Order</h5>
                     </div>
-                    <div class="card-body p-0">
-                        <table class="table table-hover table-striped table-hover">
+                    <div class="card-body ">
+                        <table class="table table-hover table-striped table-responsive">
                             <tr>
                                 <td>Order</td>
                                 <td>#<b><?php echo $data->order_number; ?></b></td>
@@ -65,8 +59,8 @@
             </div>
             <div class="col-md-4">
                 <div class="card card-success">
-                    <div class="card-header">
-                        <h5 class="card-heading">Bukti Pembayaran</h5>
+                    <div class="card-header bg-primary">
+                        <h5 class="card-heading" style="color:white;">Bukti Pembayaran</h5>
                     </div>
                     <div class="card-body">
                         <div class="text-center">
@@ -76,7 +70,8 @@
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
 </div>
 <?= $this->endSection(); ?>
