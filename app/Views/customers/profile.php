@@ -1,28 +1,23 @@
 <?= $this->extend('themes\vegefoods\template'); ?>
 
 <?= $this->section('konten'); ?>
-<div class="content-wrapper">
-  <section class="content-header">
-    <div class="container-fluid">
-      <div class="row mb-2">
-        <div class="col-sm-6">
-          <h1>Profile</h1>
-        </div>
-        <div class="col-sm-6">
-          <ol class="breadcrumb float-sm-right">
-            <li class="breadcrumb-item"><?php echo anchor(base_url(), 'Home'); ?></li>
-            <li class="breadcrumb-item active">Profil</li>
-          </ol>
-        </div>
+<div class="hero-wrap hero-bread" style="background-image: url('<?php echo get_theme_uri('images/bg_1.jpg'); ?>');">
+  <div class="container">
+    <div class="row no-gutters slider-text align-items-center justify-content-center">
+      <div class="col-md-9 ftco-animate text-center">
+        <p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Products</span>
+        </p>
+        <h1 class="mb-0 bread">Pembayaran Saya</h1>
       </div>
-    </div><!-- /.container-fluid -->
-  </section>
-
+    </div>
+  </div>
+</div>
+<div class="content-wrapper">
   <!-- Main content -->
-  <section class="content">
-    <div class="container-fluid">
+  <section class="ftco-section">
+    <div class="container">
       <div class="row">
-        <div class="col-md-3">
+        <div class="col-md-4">
 
           <!-- Profile Image -->
           <div class="card card-primary card-outline">
@@ -44,20 +39,19 @@
 
         </div>
         <!-- /.col -->
-        <div class="col-md-9">
+        <div class="col-md-8">
           <div class="card">
-            <div class="card-header p-2">
+            <div class="card-header p-2 bg-primary">
               <ul class="nav nav-pills">
-                <li class="nav-item"><a class="nav-link profil active" href="#profile" data-toggle="tab">Profil</a></li>
-                <li class="nav-item"><a class="nav-link akun " href="#akun" data-toggle="tab">Akun</a></li>
-                <li class="nav-item"><a class="nav-link email" href="#email" data-toggle="tab">Email</a></li>
-                <li class="nav-item"><a class="nav-link logout btn btn-danger btn-sm text-white font-weight-bold" href="<?php echo site_url('auth/logout'); ?>">Log Out</a></li>
+                <li class="nav-item"><a class="nav-link profil active" href="#profile" data-toggle="tab" style="color:white;">Profil</a></li>
+                <li class="nav-item"><a class="nav-link akun " href="#akun" data-toggle="tab" style="color:white;">Akun</a></li>
+                <li class="nav-item"><a class="nav-link email" href="#email" data-toggle="tab" style="color:white;">Email</a></li>
               </ul>
             </div><!-- /.card-header -->
             <div class="card-body">
               <div class="tab-content">
                 <div class="active tab-pane" id="profile">
-                  <?php echo form_open_multipart('customer/profile/edit_name'); ?>
+                  <?php echo form_open_multipart('customer_profile/edit_name'); ?>
                   <?php $validation = \Config\Services::validation() ?>
                   <div class="form-group row">
                     <label for="inputName" class="col-sm-2 col-form-label">Nama:</label>
@@ -82,15 +76,15 @@
                   </div>
 
                   <div class="form-group row">
-                    <label for="inputFoto" class="col-sm-2 col-form-label">Foto profil:</label>
+                    <label for="picture" class="col-sm-2 col-form-label">Foto profil:</label>
                     <div class="col-sm-10">
-                      <input type="file" class="form-control" id="inputFoto" name="file">
+                      <input type="file" class="form-control" id="picture" name="picture">
                     </div>
-                    <div class="form-error text-danger font-weight-bold"> <?= $validation->getError('file'); ?></div>
+                    <div class="form-error text-danger font-weight-bold"> <?= $validation->getError('picture'); ?></div>
                   </div>
                   <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                      <button type="submit" class="btn btn-danger">Ganti Nama</button>
+                      <button type="submit" class="btn btn-info" style="border-radius:10px ;">Perbarui</button>
                     </div>
                   </div>
                   <?php echo form_close(); ?>
@@ -115,7 +109,7 @@
                   </div>
                   <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                      <button type="submit" class="btn btn-danger">Perbarui</button>
+                      <button type="submit" class="btn btn-info" style="border-radius:10px ;">Perbarui</button>
                     </div>
                   </div>
                   <?php echo form_close(); ?>
@@ -134,7 +128,7 @@
 
                   <div class="form-group row">
                     <div class="offset-sm-2 col-sm-10">
-                      <button type="submit" class="btn btn-danger">Perbarui</button>
+                      <button type="submit" class="btn btn-info" style="border-radius:10px ;">Perbarui</button>
                     </div>
                   </div>
                   <?php echo form_close(); ?>

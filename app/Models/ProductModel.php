@@ -12,7 +12,7 @@ class ProductModel extends Model
         $db = \Config\Database::connect();
         $builder = $db->table('products');
         $data = $builder->get();
-        return $data->getResult();
+        return $data->getResultArray();
     }
     public function get_home_products()
     {

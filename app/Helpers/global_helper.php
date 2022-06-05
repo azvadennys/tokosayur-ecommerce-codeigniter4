@@ -129,10 +129,10 @@ if (!function_exists('get_user_image')) {
         $picture = user()->profile_picture;
         $file = './assets/uploads/users/' . $picture;
 
-        if (!file_exists($file))
+        if (file_exists('assets/uploads/users/' . $picture))
             $picture_name = $picture;
         else
-            $picture_name = 'admin.png';
+            $picture_name = 'user.jpg';
 
         return base_url('assets/uploads/users/' . $picture_name);
     }

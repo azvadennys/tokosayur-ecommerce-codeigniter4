@@ -51,21 +51,16 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
 					<li class="nav-item active"><a href="<?php echo base_url(); ?>" class="nav-link">Home</a></li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
-						<div class="dropdown-menu" aria-labelledby="dropdown04">
-							<a class="dropdown-item" href="<?php echo base_url('shop/cart'); ?>">Keranjang Belanja</a>
-							<a class="dropdown-item" href="<?php echo base_url('customer_payments/confirm'); ?>">Konfirmasi Pembayaran</a>
-						</div>
-					</li>
+					<li class="nav-item"><a href="<?php echo base_url('product'); ?>" class="nav-link">Product</a></li>
 					<li class="nav-item"><a href="<?php echo base_url('about'); ?>" class="nav-link">Tentang Kami</a></li>
 					<li class="nav-item"><a href="<?php echo base_url('contact'); ?>" class="nav-link">Kontak</a></li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="dropdown05" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Akun</a>
 						<div class="dropdown-menu" aria-labelledby="dropdown05">
 							<?php if (in_groups('customer')) : ?>
-								<a class="dropdown-item" href="<?php echo base_url('customer'); ?>">Akun saya</a>
+								<a class="dropdown-item" href="<?php echo base_url('customer_profile'); ?>">Akun saya</a>
 								<a class="dropdown-item" href="<?php echo base_url('customer_orders'); ?>">Pesanan Saya</a>
+								<a class="dropdown-item" href="<?php echo base_url('customer_payments/confirm'); ?>">Konfirmasi Pembayaran</a>
 								<div class="divider"></div>
 								<a class="dropdown-item" href="<?php echo base_url('logout'); ?>">Logout</a>
 							<?php elseif (in_groups('admin')) :  ?>
@@ -120,9 +115,9 @@
 					<div class="ftco-footer-widget mb-4 ml-md-5">
 						<h2 class="ftco-heading-2">Menu</h2>
 						<ul class="list-unstyled">
-							<li><a href="<?= base_url('pages/about')
+							<li><a href="<?= base_url('about')
 											?>" class="py-2 d-block">Tentang Kami</a></li>
-							<li><a href="<?= base_url('pages/contact') ?>" class="py-2 d-block">Hubungi Kami</a></li>
+							<li><a href="<?= base_url('contact') ?>" class="py-2 d-block">Hubungi Kami</a></li>
 						</ul>
 					</div>
 				</div>
@@ -132,7 +127,7 @@
 						<div class="d-flex">
 							<ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
 								<li><a href="<?= base_url('shop/cart') ?>" class="py-2 d-block">Keranjang Belanja</a></li>
-								<li><a href="<?= base_url('customer/payments/confirm') ?>" class="py-2 d-block">Konfirmasi Pembayaran</a></li>
+								<li><a href="<?= base_url('customer_payments/confirm') ?>" class="py-2 d-block">Konfirmasi Pembayaran</a></li>
 								<li><a href="<?= base_url('shop/testimonial') ?>" class="py-2 d-block">Testimoni Pelanggan</a></li>
 							</ul>
 						</div>

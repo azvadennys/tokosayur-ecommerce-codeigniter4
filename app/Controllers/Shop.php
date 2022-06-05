@@ -197,7 +197,7 @@ class Shop extends BaseController
                 $this->session->remove('coupon_id');
 
                 $this->session->setFlashdata('order_flash', 'Order berhasil ditambahkan');
-                return redirect()->to(base_url('customers_orders/view/' . $order));
+                return redirect()->to(base_url('customer_orders/view/' . $order));
                 break;
         }
     }
