@@ -12,8 +12,8 @@
         <div class="col-lg-6 col-5 text-right">
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-              <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
-              <li class="breadcrumb-item"><?php echo anchor('admin/contacts', 'Kontak'); ?></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('admin'); ?>"><i class="fas fa-home"></i></a></li>
+              <li class="breadcrumb-item"><?php echo anchor('admin_contacts', 'Kontak'); ?></li>
               <li class="breadcrumb-item active" aria-current="page">#<?php echo $contact->id; ?> <?php echo $contact->name; ?></li>
             </ol>
           </nav>

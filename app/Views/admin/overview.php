@@ -12,7 +12,7 @@
         <div class="col-lg-6 col-5 text-right">
           <nav aria-label="breadcrumb" class="d-none d-md-inline-block ml-md-4">
             <ol class="breadcrumb breadcrumb-links breadcrumb-dark">
-              <li class="breadcrumb-item"><a href="#"><i class="fas fa-home"></i></a></li>
+              <li class="breadcrumb-item"><a href="<?php echo base_url('admin'); ?>"><i class="fas fa-home"></i></a></li>
               <li class="breadcrumb-item active" aria-current="page">Dasbor</li>
             </ol>
           </nav>
@@ -207,7 +207,7 @@
               <li class="checklist-entry list-group-item flex-column align-items-start py-4 px-4">
                 <div class="checklist-item checklist-item-info">
                   <div class="checklist-info">
-                    <h5 class="checklist-title mb-0"><?php echo anchor('admin/orders/view/' . $order->id, 'Order #' . $order->order_number); ?></h5>
+                    <h5 class="checklist-title mb-0"><?php echo anchor('admin_orders/view/' . $order->id, 'Order #' . $order->order_number); ?></h5>
                     <small><?php echo $order->total_items; ?></small> | <small>Rp <?php echo format_rupiah($order->total_price); ?></small>
                   </div>
                 </div>
@@ -234,7 +234,7 @@
                 <div class="row align-items-center">
                   <div class="col-auto">
                     <!-- Avatar -->
-                    <a href="<?php echo base_url('admin_payments/users/' . $payment->user_id); ?>" class="avatar rounded-circle">
+                    <a href="<?php echo base_url('admin_payments/view/' . $payment->id); ?>" class="avatar rounded-circle">
                       <img alt="Image placeholder" src="<?php echo base_url('assets/uploads/users/' . $payment->profile_picture); ?>">
                     </a>
                   </div>
