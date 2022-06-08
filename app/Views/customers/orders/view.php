@@ -162,9 +162,9 @@
                             <td><b>
                                     <?php if ($data->payment_status == 1) : ?>
                                         <span class="badge badge-warning text-white">Menunggu konfirmasi</span>
-                                    <?php elseif ($data->payment_method == 2) : ?>
+                                    <?php elseif ($data->payment_status == 2) : ?>
                                         <span class="badge badge-success text-white">Dikonfirmasi</span>
-                                    <?php elseif ($data->payment_method == 3) : ?>
+                                    <?php elseif ($data->payment_status == 3) : ?>
                                         <span class="badge badge-danger text-white">Gagal</span>
                                     <?php endif; ?>
                                 </b></td>

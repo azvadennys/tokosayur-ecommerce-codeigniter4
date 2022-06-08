@@ -19,6 +19,7 @@ $query = $this->request->getGet('search_query');
   <link rel="stylesheet" href=<?= base_url('assets/themes/argon/js/plugins/@fortawesome/fontawesome-free/css/all.min.css'); ?> type="text/css">
 
   <!-- Argon CSS -->
+
   <link rel="stylesheet" href=<?= base_url('assets/themes/argon/css/argon9f1e.css?v=1.1.0'); ?> type="text/css">
 
   <script src=<?= base_url('assets/themes/argon/vendor/jquery/dist/jquery.min.js'); ?>></script>
