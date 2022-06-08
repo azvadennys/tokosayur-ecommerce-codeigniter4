@@ -10,6 +10,7 @@ class Pages extends BaseController
 {
     public function __construct()
     {
+        $this->validation =  \Config\Services::validation();
         $this->ReviewModel = new ReviewModel();
         $this->SettingModel = new SettingModel();
         $this->ProductModel = new ProductModel();
@@ -28,7 +29,7 @@ class Pages extends BaseController
 
     public function contact()
     {
-        session();
+        $this->session = session();
         // $profile = user_data();
 
         // $data['user'] = $profile;
@@ -37,7 +38,7 @@ class Pages extends BaseController
         $data = [
             'store_name' => 'Toko Ku',
             'title' => 'Contact Us',
-            //'flash' => $reviews,
+            'flash' => $this->session->getflashdata('contact_flash'),
             'reviews' => $reviews
         ];
         return view('themes\vegefoods\pages\contact', $data);
@@ -45,39 +46,43 @@ class Pages extends BaseController
 
     public function send_message()
     {
-        $this->form_validation =  \Config\Services::validation();
-        // $this->form_validation->set_error_delimiters('<div class="text-danger font-weight-bold"><small>', '</small></div>');
-        $this->form_validation->setRules([
-            'name' => 'required',
-            'subject' => 'required',
-            'email' => 'required|min_length[10]',
-            'message' => 'required',
+        $this->session = session();
+        $validate = $this->validate([
+            'name' => [
+                'label' => 'Nama lengkap',
+                'rules' => 'required'
+            ],
+            'subject' => [
+                'label' => 'Subjek pesan',
+                'rules' => 'required'
+            ],
+            'email' => [
+                'label' => 'Email',
+                'rules' => 'required'
+            ],
+            'message' => [
+                'label' => 'Pesan',
+                'rules' => 'required'
+            ],
         ]);
-        $this->form_validation->setRule('name', 'Nama lengkap', 'required');
-        $this->form_validation->setRule('subject', 'Subjek pesan', 'required');
-        $this->form_validation->setRule('email', 'Email', 'required|min_length[10]');
-        $this->form_validation->setRule('message', 'Pesan', 'required');
-
-        if ($this->form_validation->run() === FALSE) {
-            $this->contact();
-        } else {
-            $name = $this->request->getPost('name');
-            $email = $this->request->getPost('email');
-            $subject = $this->request->getPost('subject');
-            $message = $this->request->getPost('message');
-
-            $data = array(
-                'name' => $name,
-                'email' => $email,
-                'subject' => $subject,
-                'message' => $message,
-                'contact_date' => date('Y-m-d H:i:s')
-            );
-
-            $this->contact->register_contact($data);
-            $this->session->setflashdata('contact_flash', 'Pesan berhasil dikirimkan. Kami akan membalas dalam waktu 2x24 jam');
-
-            redirect('pages/contact');
+        if (!$validate) {
+            return redirect()->back()->withInput();
         }
+        $name = $this->request->getPost('name');
+        $email = $this->request->getPost('email');
+        $subject = $this->request->getPost('subject');
+        $message = $this->request->getPost('message');
+
+        $data = array(
+            'name' => $name,
+            'email' => $email,
+            'subject' => $subject,
+            'message' => $message,
+            'contact_date' => date('Y-m-d H:i:s')
+        );
+
+        $this->ReviewModel->register_contact($data);
+        $this->session->setflashdata('contact_flash', 'Pesan berhasil dikirimkan. Kami akan membalas dalam waktu 2x24 jam');
+        return redirect()->to(base_url('pages/contact'));
     }
 }

@@ -39,33 +39,26 @@
     </div>
     <div class="row block-9">
       <div class="col-md-6 order-md-last d-flex">
-        <form action="<?php echo site_url('pages/send_message'); ?>" class="bg-white p-5 contact-form" method="POST">
-          <? //php if ($flash) : 
-          ?>
-          <!-- <div class="text-success text-center" style="margin-bottom: 25px;"><? //php echo $flash; 
-                                                                                  ?></div> -->
-          <? //php endif; 
-          ?>
-
+        <form action="<?php echo base_url('pages/send_message'); ?>" class="bg-white p-5 contact-form" method="POST">
+          <?php if ($flash) : ?>
+            <div class="text-success text-center" style="margin-bottom: 25px;"><?php echo $flash; ?></div>
+          <?php endif; ?>
+          <?php $validation = \Config\Services::validation() ?>
           <div class="form-group">
             <input type="text" name="name" class="form-control" value="<?= (logged_in() ?  user()->name : ''); ?>" placeholder="Nama" required>
-            <? //php echo form_error('name'); 
-            ?>
+            <div class="form-error text-danger font-weight-bold"> <?= $validation->getError('name'); ?></div>
           </div>
           <div class="form-group">
             <input type="email" name="email" class="form-control" value="<?= (logged_in() ?  user()->email : ''); ?>" placeholder="Email" required>
-            <? //php echo form_error('email'); 
-            ?>
+            <div class="form-error text-danger font-weight-bold"> <?= $validation->getError('email'); ?></div>
           </div>
           <div class="form-group">
             <input type="text" name="subject" class="form-control" value="" placeholder="Subjek pesan" required>
-            <? //php echo form_error('subject'); 
-            ?>
+            <div class="form-error text-danger font-weight-bold"> <?= $validation->getError('subject'); ?></div>
           </div>
           <div class="form-group">
             <textarea name="message" id="" cols="30" rows="7" class="form-control" placeholder="Pesan" required></textarea>
-            <? //php echo form_error('message'); 
-            ?>
+            <div class="form-error text-danger font-weight-bold"> <?= $validation->getError('message'); ?></div>
           </div>
           <div class="form-group">
             <input type="submit" value="Kirim Pesan" class="btn btn-primary py-3 px-5">

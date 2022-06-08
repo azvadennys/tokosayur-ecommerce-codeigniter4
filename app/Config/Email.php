@@ -9,12 +9,13 @@ class Email extends BaseConfig
     /**
      * @var string
      */
-    public $fromEmail = 'tokosayurku12@gmail.com';
-
+    // public $fromEmail = 'tokosayurku12@gmail.com';
+    public $fromEmail;
     /**
      * @var string
      */
-    public $fromName = 'Toko Sayur Ku';
+    // public $fromName = 'Toko Sayur Ku';
+    public $fromName;
 
     /**
      * @var string
@@ -33,7 +34,8 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $protocol = 'smtp';
+    // public $protocol = 'smtp';
+    public $protocol = 'mail';
 
     /**
      * The server path to Sendmail.
@@ -47,35 +49,37 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $SMTPHost = 'smtp.gmail.com';
-
+    // public $SMTPHost = 'smtp.gmail.com';
+    public $SMTPHost;
     /**
      * SMTP Username
      *
      * @var string
      */
-    public $SMTPUser = 'tokosayurku12@gmail.com';
-
+    // public $SMTPUser = 'tokosayurku12@gmail.com';
+    public $SMTPUser;
     /**
      * SMTP Password
      *
      * @var string
      */
-    public $SMTPPass = 'mandiri2505';
+    public $SMTPPass;
 
     /**
      * SMTP Port
      *
      * @var int
      */
-    public $SMTPPort = 465;
+    // public $SMTPPort = 465;
+    public $SMTPPort = 25;
 
     /**
      * SMTP Timeout (in seconds)
      *
      * @var int
      */
-    public $SMTPTimeout = 60;
+    // public $SMTPTimeout = 60;
+    public $SMTPTimeout = 5;
 
     /**
      * Enable persistent SMTP connections
@@ -89,7 +93,8 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $SMTPCrypto = 'ssl';
+    // public $SMTPCrypto = 'ssl';
+    public $SMTPCrypto = 'tls';
 
     /**
      * Enable word-wrap
@@ -110,7 +115,8 @@ class Email extends BaseConfig
      *
      * @var string
      */
-    public $mailType = 'html';
+    // public $mailType = 'html';
+    public $mailType = 'text';
 
     /**
      * Character set (utf-8, iso-8859-1, etc.)

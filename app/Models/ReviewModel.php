@@ -15,4 +15,11 @@ class ReviewModel extends Model
         $query = $builder->get();
         return $query->getResultArray();
     }
+    public function register_contact($data)
+    {
+        $db = \Config\Database::connect();
+        $builder = $db->table('contacts')->insert($data);
+
+        return $db->insertID();
+    }
 }

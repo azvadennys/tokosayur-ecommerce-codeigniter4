@@ -3,6 +3,7 @@
 namespace Myth\Auth\Config;
 
 use CodeIgniter\Config\BaseConfig;
+use phpDocumentor\Reflection\PseudoTypes\False_;
 
 class Auth extends BaseConfig
 {
@@ -151,8 +152,8 @@ class Auth extends BaseConfig
 	 *
 	 * @var string|null Name of the ActivatorInterface class
 	 */
-	public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
-
+	// public $requireActivation = 'Myth\Auth\Authentication\Activators\EmailActivator';
+	public $requireActivation;
 	/**
 	 * --------------------------------------------------------------------
 	 * Allow Password Reset via Email
@@ -163,8 +164,8 @@ class Auth extends BaseConfig
 	 *
 	 * @var string|null Name of the ResetterInterface class
 	 */
-	public $activeResetter = 'Myth\Auth\Authentication\Resetters\EmailResetter';
-
+	// public $activeResetter = 'Myth\Auth\Authentication\Resetters\EmailResetter';
+	public $activeResetter;
 	/**
 	 * --------------------------------------------------------------------
 	 * Allow Persistent Login Cookies (Remember me)
