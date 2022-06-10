@@ -108,7 +108,7 @@ class AuthController extends Controller
 			$this->auth->logout();
 		}
 
-		return redirect()->to(site_url('/'));
+		return redirect()->to(base_url('/'));
 	}
 
 	//--------------------------------------------------------------------
@@ -149,7 +149,7 @@ class AuthController extends Controller
 		$rules = [
 			'name'    => 'required',
 			'phone_number'    => 'required',
-			'address'    => 'required|min_length[10]|max_length[200]',
+			'address'    => 'required|min_length[6]|max_length[200]',
 			'username' => 'required|alpha_numeric_space|min_length[3]|max_length[30]|is_unique[users.username]',
 			'email'    => 'required|valid_email|is_unique[users.email]',
 

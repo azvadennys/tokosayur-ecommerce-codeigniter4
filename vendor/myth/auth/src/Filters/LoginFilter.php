@@ -35,7 +35,7 @@ class LoginFilter implements FilterInterface
 		}
 
 		// Make sure this isn't already a login route
-		if (in_array((string)$current, [route_to('login'), route_to('forgot'), route_to('reset-password'), route_to('register'), route_to('activate-account')]))
+		if (in_array((string)$current, [route_to(base_url('login')), route_to('forgot'), route_to('reset-password'), route_to(base_url('register')), route_to('activate-account')]))
 		{
 			return;
 		}
@@ -45,7 +45,8 @@ class LoginFilter implements FilterInterface
 		if (! $authenticate->check())
 		{
 			session()->set('redirect_url', current_url());
-			return redirect('login');
+			// return redirect('login');
+			return redirect()->to(base_url('login'));
 		}
 	}
 

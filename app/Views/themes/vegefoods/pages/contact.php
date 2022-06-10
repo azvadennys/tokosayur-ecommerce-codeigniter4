@@ -33,7 +33,7 @@
       </div>
       <div class="col-md-3 d-flex">
         <div class="info bg-white p-4">
-          <p><span>Website</span> www.tokosayur22.com</p>
+          <p><span>Website</span> www.tokosayur.com</p>
         </div>
       </div>
     </div>

@@ -44,9 +44,9 @@
                     </div>
                 <?php else : ?>
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-12">
                             <div class="alert alert-info">
-                                Belum ada data order.
+                                Belum ada data order. <a href="<?= base_url('product') ?>">Order Disini !</a>
                             </div>
                         </div>
                     </div>

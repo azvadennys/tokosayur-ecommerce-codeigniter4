@@ -1,0 +1,14 @@
+CRITICAL - 2022-06-09 21:33:45 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 C:\xampp\htdocs\tokoku\system\Database\Query.php(318): strtr('SELECT COUNT(*)...', Array)
+#1 C:\xampp\htdocs\tokoku\system\Database\Query.php(293): CodeIgniter\Database\Query->matchNamedBinds('SELECT COUNT(*)...', Array)
+#2 C:\xampp\htdocs\tokoku\system\Database\Query.php(150): CodeIgniter\Database\Query->compileBinds()
+#3 C:\xampp\htdocs\tokoku\system\Database\BaseConnection.php(598): CodeIgniter\Database\Query->getQuery()
+#4 C:\xampp\htdocs\tokoku\system\Database\BaseBuilder.php(1539): CodeIgniter\Database\BaseConnection->query('SELECT COUNT(*)...', Array, false)
+#5 C:\xampp\htdocs\tokoku\app\Models\Customer\Order_model.php(67): CodeIgniter\Database\BaseBuilder->countAllResults()
+#6 C:\xampp\htdocs\tokoku\app\Controllers\Orders.php(61): App\Models\Customer\Order_model->is_order_exist('43')
+#7 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): App\Controllers\Orders->view('43')
+#8 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Orders))
+#9 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}

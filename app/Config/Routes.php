@@ -40,8 +40,18 @@ $routes->get('/register', 'Login::daftar');
 $routes->get('/shop/cart', 'Shop::cart');
 $routes->get('/shop/checkout', 'Shop::checkout', ['filter' => 'role:customer']);
 $routes->get('/customers/orders/view/(:num)', 'Orders::view/$1');
-$routes->get('/admin', 'Admin::index');
-$routes->get('/admin_products/add_new_product', 'Admin_Products::add_new_product');
+$routes->get('/admin', 'Admin::index', ['filter' => 'role:admin']);
+$routes->get('/admin_products/add_new_product', 'Admin_Products::add_new_product', ['filter' => 'role:admin']);
+$routes->get('/admin_products', 'Admin_Products::index', ['filter' => 'role:admin']);
+$routes->get('/admin_customers', 'Admin_Customers::index', ['filter' => 'role:admin']);
+$routes->get('/admin_contacts', 'Admin_Contacts::index', ['filter' => 'role:admin']);
+$routes->get('/admin_orders', 'Admin_Orders::index', ['filter' => 'role:admin']);
+$routes->get('/admin_payments', 'Admin_Payments::index', ['filter' => 'role:admin']);
+$routes->get('/admin_reviews', 'Admin_Reviews::index', ['filter' => 'role:admin']);
+$routes->get('/admin_settings', 'Admin_Settings::index', ['filter' => 'role:admin']);
+
+$routes->get('/customer_payments/confirm', 'Customer_Payments::confirm', ['filter' => 'role:customer']);
+$routes->get('/customer_orders', 'Customer_Orders::index', ['filter' => 'role:customer']);
 /*
 /*
  * --------------------------------------------------------------------

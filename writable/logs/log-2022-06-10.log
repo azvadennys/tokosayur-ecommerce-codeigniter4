@@ -1,0 +1,168 @@
+ERROR - 2022-06-10 02:36:26 --> Error connecting to the database: No connection could be made because the target machine actively refused it
+CRITICAL - 2022-06-10 02:36:26 --> Unable to connect to the database.
+Main connection [MySQLi]: No connection could be made because the target machine actively refused it
+#0 C:\xampp\htdocs\tokoku\system\Database\BaseConnection.php(577): CodeIgniter\Database\BaseConnection->initialize()
+#1 C:\xampp\htdocs\tokoku\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#2 C:\xampp\htdocs\tokoku\system\Model.php(210): CodeIgniter\Database\BaseBuilder->get()
+#3 C:\xampp\htdocs\tokoku\system\BaseModel.php(622): CodeIgniter\Model->doFirst()
+#4 C:\xampp\htdocs\tokoku\app\Controllers\Home.php(21): CodeIgniter\BaseModel->first()
+#5 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): App\Controllers\Home->index()
+#6 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+#7 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#8 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#9 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#10 {main}
+CRITICAL - 2022-06-10 02:47:17 --> Attempt to read property "profile_picture" on null
+#0 C:\xampp\htdocs\tokoku\app\Helpers\global_helper.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 97)
+#1 C:\xampp\htdocs\tokoku\app\Views\admin\header.php(163): get_admin_image()
+#2 C:\xampp\htdocs\tokoku\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\tokoku\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\tokoku\system\View\View.php(226): CodeIgniter\View\View->render('admin\\header', Array, true)
+#5 C:\xampp\htdocs\tokoku\system\Common.php(1089): CodeIgniter\View\View->render('admin\\overview', Array, true)
+#6 C:\xampp\htdocs\tokoku\app\Controllers\Admin.php(38): view('admin\\overview', Array)
+#7 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): App\Controllers\Admin->index()
+#8 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin))
+#9 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-06-10 02:47:21 --> Call to undefined function App\Controllers\logged_in()
+#0 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(809): App\Controllers\Admin_Contacts->__construct()
+#1 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-10 02:48:36 --> Attempt to read property "profile_picture" on null
+#0 C:\xampp\htdocs\tokoku\app\Helpers\global_helper.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 97)
+#1 C:\xampp\htdocs\tokoku\app\Views\admin\header.php(163): get_admin_image()
+#2 C:\xampp\htdocs\tokoku\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\tokoku\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\tokoku\system\View\View.php(226): CodeIgniter\View\View->render('admin\\header', Array, true)
+#5 C:\xampp\htdocs\tokoku\system\Common.php(1089): CodeIgniter\View\View->render('admin/contacts/...', Array, true)
+#6 C:\xampp\htdocs\tokoku\app\Controllers\Admin_Contacts.php(32): view('admin/contacts/...', Array)
+#7 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): App\Controllers\Admin_Contacts->index()
+#8 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_Contacts))
+#9 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-06-10 02:49:01 --> Attempt to read property "profile_picture" on null
+#0 C:\xampp\htdocs\tokoku\app\Helpers\global_helper.php(97): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Attempt to read...', 'C:\\xampp\\htdocs...', 97)
+#1 C:\xampp\htdocs\tokoku\app\Views\admin\header.php(163): get_admin_image()
+#2 C:\xampp\htdocs\tokoku\system\View\View.php(210): include('C:\\xampp\\htdocs...')
+#3 C:\xampp\htdocs\tokoku\system\View\View.php(213): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+#4 C:\xampp\htdocs\tokoku\system\View\View.php(226): CodeIgniter\View\View->render('admin\\header', Array, true)
+#5 C:\xampp\htdocs\tokoku\system\Common.php(1089): CodeIgniter\View\View->render('admin/contacts/...', Array, true)
+#6 C:\xampp\htdocs\tokoku\app\Controllers\Admin_Contacts.php(32): view('admin/contacts/...', Array)
+#7 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): App\Controllers\Admin_Contacts->index()
+#8 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_Contacts))
+#9 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-06-10 02:52:53 --> Call to undefined function App\Controllers\ceklogin()
+#0 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(809): App\Controllers\Admin_Contacts->__construct()
+#1 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(410): CodeIgniter\CodeIgniter->createController()
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-10 02:58:10 --> Undefined property: App\Controllers\Admin_Contacts::$contact
+#0 C:\xampp\htdocs\tokoku\app\Controllers\Admin_Contacts.php(83): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined prope...', 'C:\\xampp\\htdocs...', 83)
+#1 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): App\Controllers\Admin_Contacts->api('contacts')
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Admin_Contacts))
+#3 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#4 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#5 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#6 {main}
+CRITICAL - 2022-06-10 03:08:57 --> You do not have sufficient permissions to access that page.
+#0 C:\xampp\htdocs\tokoku\system\Filters\Filters.php(173): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), Array)
+#1 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('admin', 'before')
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-10 03:13:32 --> You do not have sufficient permissions to access that page.
+#0 C:\xampp\htdocs\tokoku\system\Filters\Filters.php(173): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), Array)
+#1 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('admin', 'before')
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-10 05:04:34 --> You do not have sufficient permissions to access that page.
+#0 C:\xampp\htdocs\tokoku\system\Filters\Filters.php(173): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), Array)
+#1 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('admin', 'before')
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-10 05:04:56 --> You do not have sufficient permissions to access that page.
+#0 C:\xampp\htdocs\tokoku\system\Filters\Filters.php(173): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), Array)
+#1 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('admin', 'before')
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-10 05:30:30 --> You do not have sufficient permissions to access that page.
+#0 C:\xampp\htdocs\tokoku\system\Filters\Filters.php(173): Myth\Auth\Filters\RoleFilter->before(Object(CodeIgniter\HTTP\IncomingRequest), Array)
+#1 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(393): CodeIgniter\Filters\Filters->run('admin', 'before')
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#3 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#4 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#5 {main}
+CRITICAL - 2022-06-10 05:32:17 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 C:\xampp\htdocs\tokoku\system\Database\Query.php(318): strtr('SELECT *\nFROM `...', Array)
+#1 C:\xampp\htdocs\tokoku\system\Database\Query.php(293): CodeIgniter\Database\Query->matchNamedBinds('SELECT *\nFROM `...', Array)
+#2 C:\xampp\htdocs\tokoku\system\Database\Query.php(150): CodeIgniter\Database\Query->compileBinds()
+#3 C:\xampp\htdocs\tokoku\system\Database\BaseConnection.php(598): CodeIgniter\Database\Query->getQuery()
+#4 C:\xampp\htdocs\tokoku\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\tokoku\app\Models\Customer\Order_model.php(57): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\tokoku\app\Controllers\Customer_Payments.php(44): App\Models\Customer\Order_model->order_with_bank_payments()
+#7 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): App\Controllers\Customer_Payments->confirm()
+#8 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customer_Payments))
+#9 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-06-10 05:34:08 --> Object of class CodeIgniter\HTTP\RedirectResponse could not be converted to string
+#0 C:\xampp\htdocs\tokoku\system\Database\Query.php(318): strtr('SELECT *\nFROM `...', Array)
+#1 C:\xampp\htdocs\tokoku\system\Database\Query.php(293): CodeIgniter\Database\Query->matchNamedBinds('SELECT *\nFROM `...', Array)
+#2 C:\xampp\htdocs\tokoku\system\Database\Query.php(150): CodeIgniter\Database\Query->compileBinds()
+#3 C:\xampp\htdocs\tokoku\system\Database\BaseConnection.php(598): CodeIgniter\Database\Query->getQuery()
+#4 C:\xampp\htdocs\tokoku\system\Database\BaseBuilder.php(1455): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#5 C:\xampp\htdocs\tokoku\app\Models\Customer\Order_model.php(57): CodeIgniter\Database\BaseBuilder->get()
+#6 C:\xampp\htdocs\tokoku\app\Controllers\Customer_Payments.php(44): App\Models\Customer\Order_model->order_with_bank_payments()
+#7 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): App\Controllers\Customer_Payments->confirm()
+#8 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Customer_Payments))
+#9 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#12 {main}
+CRITICAL - 2022-06-10 05:34:25 --> strpos(): Argument #1 ($haystack) must be of type string, array given
+#0 C:\xampp\htdocs\tokoku\system\Router\Router.php(421): strpos(Array, '$')
+#1 C:\xampp\htdocs\tokoku\system\Router\Router.php(154): CodeIgniter\Router\Router->checkRoutes('customer_paymen...')
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('customer_paymen...')
+#3 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-06-10 05:34:38 --> strpos(): Argument #1 ($haystack) must be of type string, array given
+#0 C:\xampp\htdocs\tokoku\system\Router\Router.php(421): strpos(Array, '$')
+#1 C:\xampp\htdocs\tokoku\system\Router\Router.php(154): CodeIgniter\Router\Router->checkRoutes('customer_paymen...')
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(726): CodeIgniter\Router\Router->handle('customer_paymen...')
+#3 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(368): CodeIgniter\CodeIgniter->tryToRouteIt(Object(CodeIgniter\Router\RouteCollection))
+#4 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
+CRITICAL - 2022-06-10 05:40:02 -->  route cannot be found while reverse-routing.
+#0 C:\xampp\htdocs\tokoku\system\HTTP\RedirectResponse.php(56): CodeIgniter\HTTP\Exceptions\HTTPException::forInvalidRedirectRoute('')
+#1 C:\xampp\htdocs\tokoku\vendor\myth\auth\src\Controllers\AuthController.php(200): CodeIgniter\HTTP\RedirectResponse->route(false)
+#2 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(832): Myth\Auth\Controllers\AuthController->attemptRegister()
+#3 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(419): CodeIgniter\CodeIgniter->runController(Object(Myth\Auth\Controllers\AuthController))
+#4 C:\xampp\htdocs\tokoku\system\CodeIgniter.php(326): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#5 C:\xampp\htdocs\tokoku\public\index.php(37): CodeIgniter\CodeIgniter->run()
+#6 C:\xampp\htdocs\tokoku\system\Commands\Server\rewrite.php(43): require_once('C:\\xampp\\htdocs...')
+#7 {main}
