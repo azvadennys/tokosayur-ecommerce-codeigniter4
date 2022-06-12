@@ -52,6 +52,7 @@ $routes->get('/admin_settings', 'Admin_Settings::index', ['filter' => 'role:admi
 
 $routes->get('/customer_payments/confirm', 'Customer_Payments::confirm', ['filter' => 'role:customer']);
 $routes->get('/customer_orders', 'Customer_Orders::index', ['filter' => 'role:customer']);
+$routes->get('/customer_profile', 'Customer_Profile::index', ['filter' => 'role:customer']);
 /*
 /*
  * --------------------------------------------------------------------
