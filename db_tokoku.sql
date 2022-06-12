@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 06 Jun 2022 pada 19.49
+-- Waktu pembuatan: 12 Jun 2022 pada 10.42
 -- Versi server: 10.4.22-MariaDB
 -- Versi PHP: 8.0.13
 
@@ -94,7 +94,10 @@ CREATE TABLE `auth_groups_users` (
 INSERT INTO `auth_groups_users` (`group_id`, `user_id`) VALUES
 (1, 7),
 (2, 10),
-(2, 13);
+(2, 13),
+(2, 14),
+(2, 15),
+(2, 16);
 
 -- --------------------------------------------------------
 
@@ -182,7 +185,21 @@ INSERT INTO `auth_logins` (`id`, `ip_address`, `email`, `user_id`, `date`, `succ
 (64, '::1', 'denisavsa@gmail.com', 13, '2022-06-05 09:23:25', 1),
 (65, '::1', 'denisavsa@gmail.com', NULL, '2022-06-05 09:23:43', 0),
 (66, '::1', 'denisavsa@gmail.com', 13, '2022-06-05 09:25:29', 1),
-(67, '::1', 'denisavsa@gmail.com', 13, '2022-06-05 09:47:09', 1);
+(67, '::1', 'denisavsa@gmail.com', 13, '2022-06-05 09:47:09', 1),
+(68, '::1', 'azvadenis@gmail.com', 7, '2022-06-07 07:29:29', 1),
+(69, '::1', 'azvadenis@gmail.com', 7, '2022-06-07 11:09:32', 1),
+(70, '::1', 'azvadenis@gmail.com', 7, '2022-06-07 11:45:27', 1),
+(71, '::1', 'aditio@gmail.com', 10, '2022-06-07 19:40:24', 1),
+(72, '::1', 'aditio@gmail.com', 10, '2022-06-07 20:11:16', 1),
+(73, '::1', 'azvadenis@gmail.com', 7, '2022-06-08 01:14:07', 1),
+(74, '::1', 'legogi3229@enpaypal.com', 14, '2022-06-08 06:40:31', 1),
+(75, '::1', 'legogi3229@enpaypal.com', 14, '2022-06-08 06:41:37', 1),
+(76, '::1', 'dwadwa@fgag.com', 15, '2022-06-08 07:10:13', 1),
+(77, '::1', 'aditio@gmail.com', 10, '2022-06-10 02:49:38', 1),
+(78, '::1', 'customer', NULL, '2022-06-10 05:30:23', 0),
+(79, '::1', 'aditio@gmail.com', 10, '2022-06-10 05:30:29', 1),
+(80, '::1', 'daffa@gmail.com', 16, '2022-06-10 05:41:49', 1),
+(81, '::1', 'aditio@gmail.com', 10, '2022-06-10 05:46:38', 1);
 
 -- --------------------------------------------------------
 
@@ -278,7 +295,10 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `parent_id`, `name`, `subject`, `email`, `message`, `contact_date`, `status`, `reply_at`) VALUES
-(1, NULL, 'Agung Tri Saputra', 'Pengiriman kok lama?', 'martinms.za@gmail.com', 'pengiriman pesanan saya kok lama ya', '2020-03-29 07:40:13', 2, NULL);
+(1, 1, 'Aditio', 'Pengiriman kok lama?', 'aditio@gmail.com', 'pengiriman pesanan saya kok lama ya', '2022-06-03 07:40:13', 2, NULL),
+(3, 3, 'Azvadennys Vasiguhamiaz', 'scadcdsfa', 'azvadenis@gmail.com', 'fwafawfawfawf', '2022-06-08 01:37:02', 2, NULL),
+(4, NULL, 'Azvadennys Vasiguhamiaz', 'test', 'azvadenis@gmail.com', 'coba', '2022-06-08 01:40:17', 2, NULL),
+(5, NULL, 'Azvadennys Vasiguhamiaz', 'dwadwa', 'azvadenis@gmail.com', 'dwadwad', '2022-06-08 01:42:55', 2, NULL);
 
 -- --------------------------------------------------------
 
@@ -382,7 +402,8 @@ INSERT INTO `orders` (`id`, `user_id`, `coupon_id`, `order_number`, `order_statu
 (60, 10, NULL, 'TWJ5622110519', '2', '2022-06-05 01:31:56', '14000.00', 1, 1, '{\"customer\":{\"name\":\"Aditio Pratama\",\"phone_number\":\"082282741162\",\"address\":\"Kota Bengkulu\"},\"note\":\"\"}', NULL, NULL),
 (61, 10, NULL, 'LCJ5622210736', '5', '2022-06-05 01:36:09', '73000.00', 2, 1, '{\"customer\":{\"name\":\"Aditio Pratamaafawf\",\"phone_number\":\"082282741162\",\"address\":\"Kota Bengkulu\"},\"note\":\"\"}', NULL, NULL),
 (62, 10, NULL, 'REX5622210473', '1', '2022-06-05 09:03:55', '26000.00', 2, 1, '{\"customer\":{\"name\":\"Aditio Pratama\",\"phone_number\":\"082282741162\",\"address\":\"Kota Bengkulu\"},\"note\":\"\"}', NULL, NULL),
-(63, 13, 4, 'TYN56222134073', '2', '2022-06-05 09:26:54', '26000.00', 2, 1, '{\"customer\":{\"name\":\"AZVADENNYS VASIGUHAMIAZ\",\"phone_number\":\"082175831680\",\"address\":\"Jln Enggang NO 16\"},\"note\":\"\"}', NULL, NULL);
+(63, 13, 4, 'TYN56222134073', '2', '2022-06-05 09:26:54', '26000.00', 2, 1, '{\"customer\":{\"name\":\"AZVADENNYS VASIGUHAMIAZ\",\"phone_number\":\"082175831680\",\"address\":\"Jln Enggang NO 16\"},\"note\":\"\"}', NULL, NULL),
+(64, 10, NULL, 'HVL7622110136', '2', '2022-06-07 19:40:56', '20000.00', 1, 1, '{\"customer\":{\"name\":\"Aditio Pratama\",\"phone_number\":\"084124123131\",\"address\":\"Jln Bengkulu Indah Mall\"},\"note\":\"\"}', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -430,7 +451,8 @@ INSERT INTO `order_items` (`id`, `order_id`, `product_id`, `order_qty`, `order_p
 (54, 62, 4, 1, '10000.00'),
 (55, 62, 5, 1, '12000.00'),
 (56, 63, 11, 1, '15000.00'),
-(57, 63, 10, 1, '12000.00');
+(57, 63, 10, 1, '12000.00'),
+(58, 64, 4, 1, '10000.00');
 
 -- --------------------------------------------------------
 
@@ -462,7 +484,8 @@ INSERT INTO `payments` (`id`, `order_id`, `payment_price`, `payment_date`, `pict
 (12, 61, '73000.00', '2022-06-05 01:36:34', '24663379_A1_1.jpg', '2', NULL, '{\"transfer_to\":\"dana\",\"source\":{\"bank\":\"bengkulu\",\"name\":\"adit\",\"number\":\"4210471204914\"}}'),
 (13, 54, '19000.00', '2022-06-05 08:55:25', 'tari gandai modeling (2)_3.png', '1', NULL, '{\"transfer_to\":\"bank-mandiri\",\"source\":{\"bank\":\"bengkulu\",\"name\":\"Customer ku\",\"number\":\"6876768698\"}}'),
 (14, 60, '14000.00', '2022-06-05 09:05:34', 'tari gandai modeling (2)_4.png', '1', NULL, '{\"transfer_to\":\"shopee-pay\",\"source\":{\"bank\":\"bengkulu\",\"name\":\"Azvadennys Vasiguhamiaz\",\"number\":\"6876768698\"}}'),
-(15, 63, '44000.00', '2022-06-05 09:27:30', '24663379_A1_2.jpg', '1', NULL, '{\"transfer_to\":\"bank-mandiri\",\"source\":{\"bank\":\"bengkulu\",\"name\":\"Azvadennys Vasiguhamiaz\",\"number\":\"6876768698\"}}');
+(15, 63, '44000.00', '2022-06-05 09:27:30', '24663379_A1_2.jpg', '1', NULL, '{\"transfer_to\":\"bank-mandiri\",\"source\":{\"bank\":\"bengkulu\",\"name\":\"Azvadennys Vasiguhamiaz\",\"number\":\"6876768698\"}}'),
+(16, 64, '20000.00', '2022-06-07 19:45:50', 'WhatsApp Image 2022-06-06 at 13.33.17.jpeg', '1', NULL, '{\"transfer_to\":\"bank-mandiri\",\"source\":{\"bank\":\"Mandiri\",\"name\":\"Aditio\",\"number\":\"179001241234121\"}}');
 
 -- --------------------------------------------------------
 
@@ -609,7 +632,10 @@ INSERT INTO `users` (`id`, `email`, `username`, `name`, `phone_number`, `address
 (7, 'azvadenis@gmail.com', 'admin', 'Azvadennys Vasiguhamiaz', '082175831680', 'Jln Enggang NO 16', 'pp.jpg', '$2y$10$TWlThSepY9rolyFljw.fHe8ndGSF2kSsHJ3cNe7d7vs24BRsatKCe', NULL, '2022-05-15 20:47:06', NULL, NULL, NULL, NULL, 1, 0, '2022-05-15 19:52:34', '2022-05-15 20:47:06', NULL),
 (8, 'tes@dadw.com', 'admin1', 'aap', '082175831680', 'Jln Enggang NO 16', 'user.jpg', '$2y$10$B5m6ZWK.YL8.Z8textwyXu4haosKVV.OAezKBXi.UkIjW3.KuY3/S', NULL, NULL, NULL, 'd9dbf84e0fa3596db4060ee4dd666e31', NULL, NULL, 0, 0, '2022-05-15 20:54:19', '2022-05-15 20:54:19', NULL),
 (10, 'aditio@gmail.com', 'aditio', 'Aditio Pratama', '082175831680', 'Jln Enggang NO 16', 'tio.png', '$2y$10$1i0.OSr2XbtHzdnpUh9/1u3MCDf1ihWAkVV3NrC7fQjmv3KvClpUu', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-05-16 01:44:07', '2022-05-16 01:44:23', NULL),
-(13, 'denisavsa@gmail.com', 'dennys', 'Azvadennys Vasiguhamiaz', '082175831680', 'Jln Enggang NO 16', 'pp_1.jpg', '$2y$10$nsbXMIA4b48uMlFtP8NNJ.bp5GoyvTMq4RWMpa.8l8O/UTVLldZUa', NULL, '2022-06-05 09:25:18', NULL, NULL, NULL, NULL, 1, 0, '2022-06-05 08:36:20', '2022-06-05 09:25:18', NULL);
+(13, 'denisavsa@gmail.com', 'dennys', 'Azvadennys Vasiguhamiaz', '082175831680', 'Jln Enggang NO 16', 'pp_1.jpg', '$2y$10$nsbXMIA4b48uMlFtP8NNJ.bp5GoyvTMq4RWMpa.8l8O/UTVLldZUa', NULL, '2022-06-05 09:25:18', NULL, NULL, NULL, NULL, 1, 0, '2022-06-05 08:36:20', '2022-06-05 09:25:18', NULL),
+(14, 'legogi3229@enpaypal.com', 'customer31', 'Aditio Pratamawdqdw', '23214124121', 'dwdadwadawd', 'user.jpg', '$2y$10$NW4qKCA/qdj4J3k2fcMkTOKds/RtFHTtrYQu9OQkbngEkZsKu7K/S', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-06-08 06:40:25', '2022-06-08 06:40:25', NULL),
+(15, 'dwadwa@fgag.com', 'asdasdasd', 'Customer ku', '082175831680', 'Jln Enggang NO 16', 'user.jpg', '$2y$10$4cP8f60aHFLWkWpOK8kWGOjSBgOhJzI6geRPHF2Lk.0NfQM7uFInG', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-06-08 07:10:10', '2022-06-08 07:10:10', NULL),
+(16, 'daffa@gmail.com', 'daffa', 'Daffa', '9904091109410', 'Jln Pembangunan', 'user.jpg', '$2y$10$7vsng7daDQQjBfSEC.sbKO62lUtwqel2U.6mYbvAC.IQ5N5u5/85y', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0, '2022-06-10 05:40:02', '2022-06-10 05:40:02', NULL);
 
 --
 -- Indexes for dumped tables
@@ -774,7 +800,7 @@ ALTER TABLE `auth_groups`
 -- AUTO_INCREMENT untuk tabel `auth_logins`
 --
 ALTER TABLE `auth_logins`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=68;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT untuk tabel `auth_permissions`
@@ -798,7 +824,7 @@ ALTER TABLE `auth_tokens`
 -- AUTO_INCREMENT untuk tabel `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT untuk tabel `coupons`
@@ -816,19 +842,19 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT untuk tabel `orders`
 --
 ALTER TABLE `orders`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=65;
 
 --
 -- AUTO_INCREMENT untuk tabel `order_items`
 --
 ALTER TABLE `order_items`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 
 --
 -- AUTO_INCREMENT untuk tabel `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT untuk tabel `products`
@@ -858,7 +884,7 @@ ALTER TABLE `settings`
 -- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- Ketidakleluasaan untuk tabel pelimpahan (Dumped Tables)
