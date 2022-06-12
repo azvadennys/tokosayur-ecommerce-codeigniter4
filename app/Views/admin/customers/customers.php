@@ -42,7 +42,6 @@
                   <th scope="col">Email</th>
                   <th scope="col">No. HP</th>
                   <th scope="col">Alamat</th>
-                  <th scope="col"></th>
                 </tr>
               </thead>
             </table>
@@ -147,15 +146,16 @@
           },
           {
             "data": "address"
-          },
-          {
-            "mRender": function(data, type, row) {
-              var url = window.location.href.split('?')[0].replace('#', '');
-              url = url + '/edit/' + row.id;
-
-              return '<div class="text-right"><a href="#" data-id="' + row.id + '" class="btn btn-danger btn-sm btnDelete"><i class="fa fa-trash"></i></a></div>';
-            }
           }
+          // ,
+          // {
+          //   "mRender": function(data, type, row) {
+          //     var url = window.location.href.split('?')[0].replace('#', '');
+          //     url = url + '/edit/' + row.id;
+
+          //     return '<div class="text-right"><a href="#" data-id="' + row.id + '" class="btn btn-danger btn-sm btnDelete"><i class="fa fa-trash"></i></a></div>';
+          //   }
+          // }
         ],
         "language": {
           "search": "Cari:",

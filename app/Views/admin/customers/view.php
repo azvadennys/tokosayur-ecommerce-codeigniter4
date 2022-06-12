@@ -61,9 +61,9 @@
               </tr>
             </table>
           </div>
-          <div class="card-footer">
-            <a href="#" data-id="<?php echo $customer->id; ?>" class="btn btn-danger btn-sm btnDelete"><i class="fa fa-trash"></i></a>
-          </div>
+          <!-- <div class="card-footer">
+            <a href="#" data-id="<?//php echo $customer->id; ?>" class="btn btn-danger btn-sm btnDelete"><i class="fa fa-trash"></i></a>
+          </div> -->
 
         </div>
 
